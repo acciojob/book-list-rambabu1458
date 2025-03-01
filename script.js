@@ -2,9 +2,9 @@ function insert_Row() {
     let table = document.querySelector("#sampleTable");
 
     // Get input values
-    let title = document.querySelector(".title").value;
-    let author = document.querySelector(".author").value;
-    let isbn = document.querySelector(".isbn").value;
+    let title = document.querySelector("#title").value;
+    let author = document.querySelector("#author").value;
+    let isbn = document.querySelector("#isbn").value;
 
     // Check if any field is empty
     if (title.trim() === "" || author.trim() === "" || isbn.trim() === "") {
@@ -41,7 +41,7 @@ function insert_Row() {
     cell4.appendChild(deleteBtn);
 
     // Clear input fields after adding the book
-    document.querySelector(".title").value = "";
-    document.querySelector(".author").value = "";
-    document.querySelector(".isbn").value = "";
+    document.querySelector("#title").value = "";
+    document.querySelector("#author").value = "";
+    document.querySelector("#isbn").value = "";
 }
