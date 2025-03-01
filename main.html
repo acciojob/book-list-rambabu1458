@@ -9,17 +9,23 @@
 <body>
 	<!-- the entire body must be written by student -->
 	<h1>My<span>Book</span>List</h1>
-	<div>
+	<form>
+		 <div class="form-group">
 	<lable>Title</lable>
 	<input type="text" class="title">
+		 </div>
+		 <div class="form-group">
 	<lable>Author</lable>
 	<input type="text" class="author">
+			 </div>
+		 <div class="form-group">
 	<lable>ISBN#</lable>
 	<input type="text" class="isbn">
+			 </div>
 	<button onclick="insert_Row()">Add Book</button>
-	</div>
+	</form>
 	<table id="sampleTable">
-		<tr class="hrLine">
+		<tr>
 			<th>Title</th>
 			<th>Author</th>
 			<th>ISBN#</th>
