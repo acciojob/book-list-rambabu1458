@@ -5,6 +5,7 @@ document.getElementById("bookForm").addEventListener("submit", function (event) 
     const author = document.querySelector("#author").value.trim();
     const isbn = document.querySelector("#isbn").value.trim();
 
+    // Validation
     if (!title || !author || !isbn) {
         alert("Please fill in all fields.");
         return;
@@ -12,39 +13,37 @@ document.getElementById("bookForm").addEventListener("submit", function (event) 
 
     const tableBody = document.querySelector("#book-list tbody");
 
-    // Create a new row
+    // Create new row
     const newRow = document.createElement("tr");
 
-    // Create table cells
-    const titleCell = document.createElement("td");
-    const authorCell = document.createElement("td");
-    const isbnCell = document.createElement("td");
-    const actionCell = document.createElement("td");
+    // Create and populate cells
+    const cell1 = document.createElement("td");
+    cell1.textContent = title;
 
-    titleCell.textContent = title;
-    authorCell.textContent = author;
-    isbnCell.textContent = isbn;
+    const cell2 = document.createElement("td");
+    cell2.textContent = author;
 
-    // Create delete button with expected class for Cypress
+    const cell3 = document.createElement("td");
+    cell3.textContent = isbn;
+
+    const cell4 = document.createElement("td");
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
-    deleteBtn.className = "delete"; // Cypress expects this class
-
-    deleteBtn.addEventListener("click", () => {
+    deleteBtn.className = "delete";
+    deleteBtn.addEventListener("click", function () {
         newRow.remove();
     });
-
-    actionCell.appendChild(deleteBtn);
+    cell4.appendChild(deleteBtn);
 
     // Append cells to the row
-    newRow.appendChild(titleCell);
-    newRow.appendChild(authorCell);
-    newRow.appendChild(isbnCell);
-    newRow.appendChild(actionCell);
+    newRow.appendChild(cell1);
+    newRow.appendChild(cell2);
+    newRow.appendChild(cell3);
+    newRow.appendChild(cell4);
 
-    // Add the row to the table body (insert at top or bottom)
-    tableBody.appendChild(newRow);
+    // Insert the row into tbody (top or bottom)
+    tableBody.insertBefore(newRow, tableBody.firstChild); // inserts at top
 
-    // Clear the form
+    // Reset the form
     document.getElementById("bookForm").reset();
 });
