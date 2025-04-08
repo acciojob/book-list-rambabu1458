@@ -64,4 +64,10 @@ button:hover {
     padding: 5px 10px;
     cursor: pointer;
 }
+.table-striped{
+	border:0px solid;
+}
+tr td{
+	background-color:lightgray;
+}
 
