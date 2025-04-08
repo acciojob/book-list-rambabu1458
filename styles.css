@@ -10,7 +10,7 @@ input{
 	width:100%;
 	margin-bottom:4px;
 }
-button{
+#submit{
 	margin-top:10px;
 	padding:6px 10px;
 	color:white;
@@ -53,7 +53,7 @@ input {
     cursor: pointer;
 }
 
-button:hover {
+#submit:hover {
     background-color: #218838;
 }
 
@@ -63,11 +63,15 @@ button:hover {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+    border-radius: 4px;
+}
+.delete:hover{
+    background-color: rgba(250, 4, 4, 0.518);
 }
 .table-striped{
 	border:0px solid;
 }
-.table-striped tr td{
-	background-color:lightgray;
+#book-list tbody tr td{
+    text-align: left;
 }
 
