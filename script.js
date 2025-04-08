@@ -1,7 +1,7 @@
-document.getElementById("book-list").addEventListener("submit", function (event) {
+document.getElementById("bookForm").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form from refreshing
 
-    let table = document.querySelector("#sampleTable");
+    let table = document.querySelector("#book-list");
 
     // Get input values
     let title = document.querySelector("#title").value.trim();
@@ -38,5 +38,5 @@ document.getElementById("book-list").addEventListener("submit", function (event)
     cell4.appendChild(deleteBtn);
 
     // Clear input fields after adding the book
-    document.getElementById("book-list").reset();
+    document.getElementById("bookForm").reset();
 });
