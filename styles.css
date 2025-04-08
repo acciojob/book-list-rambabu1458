@@ -47,7 +47,7 @@ input {
     margin-top: 5px;
 }
 
-button {
+#submit {
     color: white;
     border: none;
     cursor: pointer;
@@ -63,5 +63,8 @@ button:hover {
     border: none;
     padding: 5px 10px;
     cursor: pointer;
+}
+..table-striped{
+	border:1px solid;
 }
 

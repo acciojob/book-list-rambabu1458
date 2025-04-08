@@ -1,4 +1,4 @@
-document.getElementById("bookForm").addEventListener("submit", function (event) {
+document.getElementById("book-list").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form from refreshing
 
     let table = document.querySelector("#sampleTable");
