@@ -67,7 +67,7 @@ button:hover {
 .table-striped{
 	border:0px solid;
 }
-tr td{
+.table-striped tr td{
 	background-color:lightgray;
 }
 
