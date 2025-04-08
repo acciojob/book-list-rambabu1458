@@ -38,5 +38,5 @@ document.getElementById("book-list").addEventListener("submit", function (event)
     cell4.appendChild(deleteBtn);
 
     // Clear input fields after adding the book
-    document.getElementById("bookForm").reset();
+    document.getElementById("book-list").reset();
 });
