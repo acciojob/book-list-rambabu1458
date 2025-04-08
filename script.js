@@ -1,42 +1,49 @@
 document.getElementById("bookForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form from refreshing
+    event.preventDefault();
 
-    let tableBody = document.querySelector("#book-list tbody"); // Target tbody specifically
+    const title = document.querySelector("#title").value.trim();
+    const author = document.querySelector("#author").value.trim();
+    const isbn = document.querySelector("#isbn").value.trim();
 
-    // Get input values
-    let title = document.querySelector("#title").value.trim();
-    let author = document.querySelector("#author").value.trim();
-    let isbn = document.querySelector("#isbn").value.trim();
-
-    // Validate inputs
+    // Validation
     if (!title || !author || !isbn) {
         alert("Please fill in all fields.");
         return;
     }
 
-    // Insert a new row at the top of tbody
-    let newRow = tableBody.insertRow(0);
+    const tableBody = document.querySelector("#book-list tbody");
 
-    // Insert cells and assign values
-    let cell1 = newRow.insertCell(0);
-    let cell2 = newRow.insertCell(1);
-    let cell3 = newRow.insertCell(2);
-    let cell4 = newRow.insertCell(3);
+    // Create new row
+    const newRow = document.createElement("tr");
 
+    // Create and populate cells
+    const cell1 = document.createElement("td");
     cell1.textContent = title;
+
+    const cell2 = document.createElement("td");
     cell2.textContent = author;
+
+    const cell3 = document.createElement("td");
     cell3.textContent = isbn;
 
-    // Add a delete button
-    let deleteBtn = document.createElement("button");
+    const cell4 = document.createElement("td");
+    const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
     deleteBtn.className = "delete-btn";
-    deleteBtn.onclick = function () {
-        tableBody.deleteRow(newRow.rowIndex - 1); // Adjust index since it's in tbody
-    };
-
+    deleteBtn.addEventListener("click", function () {
+        newRow.remove();
+    });
     cell4.appendChild(deleteBtn);
 
-    // Clear input fields
+    // Append cells to the row
+    newRow.appendChild(cell1);
+    newRow.appendChild(cell2);
+    newRow.appendChild(cell3);
+    newRow.appendChild(cell4);
+
+    // Insert the row into tbody (top or bottom)
+    tableBody.insertBefore(newRow, tableBody.firstChild); // inserts at top
+
+    // Reset the form
     document.getElementById("bookForm").reset();
 });
