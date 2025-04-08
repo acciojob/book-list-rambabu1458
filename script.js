@@ -1,6 +1,7 @@
 document.getElementById("bookForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
+    // Get input values
     const title = document.querySelector("#title").value.trim();
     const author = document.querySelector("#author").value.trim();
     const isbn = document.querySelector("#isbn").value.trim();
@@ -11,9 +12,10 @@ document.getElementById("bookForm").addEventListener("submit", function (event) 
         return;
     }
 
+    // Select the table body
     const tableBody = document.querySelector("#book-list tbody");
 
-    // Create new row
+    // Create a new row
     const newRow = document.createElement("tr");
 
     // Create and populate cells
@@ -35,15 +37,15 @@ document.getElementById("bookForm").addEventListener("submit", function (event) 
     });
     cell4.appendChild(deleteBtn);
 
-    // Append cells to the row
+    // Append cells to row
     newRow.appendChild(cell1);
     newRow.appendChild(cell2);
     newRow.appendChild(cell3);
     newRow.appendChild(cell4);
 
-    // Insert the row into tbody (top or bottom)
-    tableBody.insertBefore(newRow, tableBody.firstChild); // inserts at top
+    // Insert new row at the top
+    tableBody.insertBefore(newRow, tableBody.firstChild);
 
-    // Reset the form
+    // Reset form fields
     document.getElementById("bookForm").reset();
 });

@@ -27,19 +27,24 @@
             <input type="text" id="isbn" class="isbn" required>
         </div>
 
-        <button  type="submit" id="submit">Add Book</button>
+        <button type="submit" id="submit">Add Book</button>
     </form>
 </div>
 
 <table id="book-list" class="table-striped">
-    <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>ISBN#</th>
-        <th>Actions</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN#</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Book rows will be added here -->
+    </tbody>
 </table>
-<hr>
+
 
     <script type="text/javascript" src="./script.js">
 </script>
